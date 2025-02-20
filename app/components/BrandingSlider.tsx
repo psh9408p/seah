@@ -4,30 +4,32 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Image from "next/image";
 
 // brandData.js (예시)
 export const brandData = [
     {
         id: 1,
         brandName: "Sulwhasoo",
-        brandImg: "images/main_image111.jpg",
+        brandImg: "/images/main_image111.jpg",
         brandAlt: "설화수",
         brandDesc: "예술과 헤리티지로 빚어내는 아름다움의 세계",
         brandLink: "/int/ko/brands/sulwhasoo.html",
-        brandLogo: "/int/ko/brands/__icsFiles/afieldfile/2023/01/19/main_3.png",
+        brandLogo:
+            "https://int.amorepacific.com/int/ko/brands/__icsFiles/afieldfile/2023/01/19/main_3.png",
         brandSNS: [
             {
                 type: "facebook",
                 link: "https://www.facebook.com/sulwhasoo.official",
-                icon: "/int/ko/resource/images/a/facebook.png",
-                iconOver: "/int/ko/resource/images/a/facebook_over.png",
+                icon: "/images/facebook.png",
+                iconOver: "/images/facebook_over.png",
                 alt: "facebook",
             },
             {
                 type: "insta",
                 link: "https://www.instagram.com/sulwhasoo.official/",
-                icon: "/int/ko/resource/images/a/insta.png",
-                iconOver: "/int/ko/resource/images/a/insta_over.png",
+                icon: "/images/insta.png",
+                iconOver: "/images/insta_over.png",
                 alt: "instagram",
             },
             // 필요한 만큼 추가
@@ -36,7 +38,7 @@ export const brandData = [
     {
         id: 2,
         brandName: "Laneige",
-        brandImg: "images/main_image111.jpg",
+        brandImg: "/images/main_image121.jpg",
         brandAlt: "라네즈",
         brandDesc: "OPEN TO WONDER.",
         brandLink: "/int/ko/brands/laneige.html",
@@ -46,15 +48,15 @@ export const brandData = [
             {
                 type: "facebook",
                 link: "http://www.facebook.com/laneige.kr",
-                icon: "/int/ko/resource/images/a/facebook.png",
-                iconOver: "/int/ko/resource/images/a/facebook_over.png",
+                icon: "/images/facebook.png",
+                iconOver: "/images/facebook_over.png",
                 alt: "facebook",
             },
             {
                 type: "insta",
                 link: "https://instagram.com/laneige_kr/",
-                icon: "/int/ko/resource/images/a/insta.png",
-                iconOver: "/int/ko/resource/images/a/insta_over.png",
+                icon: "/images/insta.png",
+                iconOver: "/images/insta_over.png",
                 alt: "instagram",
             },
             // ...
@@ -63,7 +65,7 @@ export const brandData = [
     {
         id: 3,
         brandName: "Innisfree",
-        brandImg: "images/main_image111.jpg",
+        brandImg: "/images/main_image1111.jpg",
         brandAlt: "이니스프리",
         brandDesc:
             "Effective, Nature-Powered Skincare Discovered from the Island",
@@ -74,20 +76,49 @@ export const brandData = [
             {
                 type: "insta",
                 link: "https://www.instagram.com/innisfreeofficial",
-                icon: "/int/ko/resource/images/a/insta.png",
-                iconOver: "/int/ko/resource/images/a/insta_over.png",
+                icon: "/images/insta.png",
+                iconOver: "/images/insta_over.png",
                 alt: "instagram",
             },
             {
                 type: "youtube",
                 link: "https://www.youtube.com/@innisfreeofficial",
-                icon: "/int/ko/resource/images/a/youtube.png",
-                iconOver: "/int/ko/resource/images/a/youtube_over.png",
+                icon: "/images/youtube.png",
+                iconOver: "/images/youtube_over.png",
                 alt: "youtube",
             },
             // ...
         ],
     },
+    {
+        id: 3,
+        brandName: "Innisfree",
+        brandImg: "/images/main_image12111.jpg",
+        brandAlt: "이니스프리",
+        brandDesc:
+            "Effective, Nature-Powered Skincare Discovered from the Island",
+        brandLink: "/int/ko/brands/innisfree.html",
+        brandLogo:
+            "/int/ko/brands/__icsFiles/afieldfile/2023/03/08/main_170x22.png",
+        brandSNS: [
+            {
+                type: "insta",
+                link: "https://www.instagram.com/innisfreeofficial",
+                icon: "/images/insta.png",
+                iconOver: "/images/insta_over.png",
+                alt: "instagram",
+            },
+            {
+                type: "youtube",
+                link: "https://www.youtube.com/@innisfreeofficial",
+                icon: "/images/youtube.png",
+                iconOver: "/images/youtube_over.png",
+                alt: "youtube",
+            },
+            // ...
+        ],
+    },
+
     // 필요한 만큼 추가
 ];
 
@@ -122,7 +153,7 @@ const BrandSlider = () => {
     };
 
     return (
-        <div className="w-4/5 mx-auto">
+        <div className="w-4/5 mx-auto max-w-6xl">
             <h2 className="text-2xl font-bold mb-8 text-center">
                 Follow Our Brands
             </h2>
@@ -133,12 +164,16 @@ const BrandSlider = () => {
                         key={brand.id}
                         role="option"
                         aria-describedby={`slick-slide${brand.id}`}
+                        aria-selected="false"
                     >
-                        <div className="thum relative">
-                            <img
+                        <div className="thum relative aspect-square max-w-md mx-auto">
+                            <Image
                                 src={brand.brandImg}
                                 alt={brand.brandAlt}
-                                className="w-full block"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                priority
                             />
                             <div className="over_area absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-6">
                                 <p className="slide-desc text-center mb-4">
@@ -169,15 +204,17 @@ const BrandSlider = () => {
                                             <div
                                                 className={`sns_icon ${sns.type} relative w-8 h-8`}
                                             >
-                                                <img
+                                                <Image
                                                     src={sns.icon}
                                                     alt={sns.alt}
-                                                    className="w-full h-full absolute transition-opacity duration-300 group-hover:opacity-0"
+                                                    fill
+                                                    className="transition-opacity duration-300 group-hover:opacity-0"
                                                 />
-                                                <img
+                                                <Image
                                                     src={sns.iconOver}
                                                     alt={sns.alt}
-                                                    className="over_img w-full h-full absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                                    fill
+                                                    className="over_img opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                                 />
                                             </div>
                                             <span className="blind sr-only">
@@ -188,15 +225,14 @@ const BrandSlider = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="logo mt-4 flex justify-center">
-                            <span>
-                                <img
-                                    src={brand.brandLogo}
-                                    alt={brand.brandName}
-                                    className="h-8 object-contain"
-                                />
-                            </span>
-                        </div>
+                        {/* <div className="logo mt-4 flex justify-center relative h-8">
+                            <Image
+                                src={brand.brandLogo}
+                                alt={brand.brandName}
+                                fill
+                                className="object-contain"
+                            />
+                        </div> */}
                     </div>
                 ))}
             </Slider>
