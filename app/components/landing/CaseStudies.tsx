@@ -4,15 +4,27 @@ import Link from "next/link";
 export default function CaseStudies() {
     const cases = [
         {
-            title: "어린이 놀이터 시공",
+            title: "고무블럭 시공",
             location: "서울시 강남구",
-            image: "/next.svg",
+            image: "/images/1show12302.jpg",
             description: "안전을 최우선으로 고려한 어린이 놀이터 고무매트 시공",
         },
         {
-            title: "체육관 바닥재 시공",
+            title: "고무매트 시공",
             location: "부산시 해운대구",
-            image: "/next.svg",
+            image: "/images/3htm61.jpg",
+            description: "고탄성 충격흡수 고무매트로 완성한 실내체육관",
+        },
+        {
+            title: "고무칩 시공",
+            location: "부산시 해운대구",
+            image: "/images/3show009169.jpg",
+            description: "고탄성 충격흡수 고무매트로 완성한 실내체육관",
+        },
+        {
+            title: "어린이 놀이터 시공",
+            location: "부산시 해운대구",
+            image: "/images/show133.jpg",
             description: "고탄성 충격흡수 고무매트로 완성한 실내체육관",
         },
     ];

@@ -6,8 +6,8 @@ export default function Header() {
     // const [searchTerm, setSearchTerm] = useState("");
 
     const categories = [
-        { name: "신제품", href: "/new" },
-        { name: "only", href: "/only" },
+        { name: "회사소개", href: "/new" },
+        { name: "제품정보", href: "/only" },
         { name: "이벤트", href: "/events" },
         { name: "베스트", href: "/best" },
     ];
