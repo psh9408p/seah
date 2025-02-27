@@ -410,69 +410,38 @@ export default function ProductsPage() {
 
                             {selectedProduct.details && (
                                 <div className="space-y-6">
-                                    {selectedProduct.details.images && (
-                                        <div className="mb-8">
-                                            <div className="relative h-[300px] md:h-[400px] w-full mb-4">
-                                                <Image
-                                                    src={
-                                                        selectedProduct.details
-                                                            .images.main
-                                                    }
-                                                    alt={`${selectedProduct.title} 메인 이미지`}
-                                                    fill
-                                                    className="object-contain rounded-lg"
-                                                />
-                                            </div>
-                                            {selectedProduct.details.images
-                                                .gallery && (
+                                    <div className="relative h-[300px] md:h-[400px] w-full mb-4">
+                                        <Image
+                                            src={
+                                                selectedProduct.details.images!
+                                                    .main
+                                            }
+                                            alt={`${selectedProduct.title} 메인 이미지`}
+                                            fill
+                                            className="object-contain rounded-lg"
+                                        />
+                                    </div>
+
+                                    {/* 갤러리 이미지 */}
+                                    <div className="grid gap-4 grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto">
+                                        {selectedProduct.details.images!.gallery?.map(
+                                            (img, index) => (
                                                 <div
-                                                    className={`grid gap-4 ${
-                                                        selectedProduct.details
-                                                            .images.gallery
-                                                            .length === 1
-                                                            ? "grid-cols-1"
-                                                            : selectedProduct
-                                                                  .details
-                                                                  .images
-                                                                  .gallery
-                                                                  .length === 2
-                                                            ? "grid-cols-2"
-                                                            : "grid-cols-3"
-                                                    } max-w-2xl mx-auto`}
+                                                    key={index}
+                                                    className="relative h-[150px] w-full"
                                                 >
-                                                    {selectedProduct.details.images.gallery.map(
-                                                        (img, index) => (
-                                                            <div
-                                                                key={index}
-                                                                className={`relative ${
-                                                                    selectedProduct
-                                                                        .details
-                                                                        .images
-                                                                        .gallery
-                                                                        .length ===
-                                                                    1
-                                                                        ? "h-[200px]"
-                                                                        : "h-[100px]"
-                                                                } w-full`}
-                                                            >
-                                                                <Image
-                                                                    src={img}
-                                                                    alt={`${
-                                                                        selectedProduct.title
-                                                                    } 이미지 ${
-                                                                        index +
-                                                                        1
-                                                                    }`}
-                                                                    fill
-                                                                    className="object-cover rounded-lg cursor-pointer hover:opacity-75 transition-opacity"
-                                                                />
-                                                            </div>
-                                                        )
-                                                    )}
+                                                    <Image
+                                                        src={img}
+                                                        alt={`${
+                                                            selectedProduct.title
+                                                        } 이미지 ${index + 1}`}
+                                                        fill
+                                                        className="object-cover rounded-lg cursor-pointer hover:opacity-75 transition-opacity"
+                                                    />
                                                 </div>
-                                            )}
-                                        </div>
-                                    )}
+                                            )
+                                        )}
+                                    </div>
 
                                     <p className="text-gray-700 leading-relaxed">
                                         {selectedProduct.details.description}
