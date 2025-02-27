@@ -8,8 +8,8 @@ export default function Home() {
     return (
         <main>
             <Header />
-            <BrandingSlider />
             <ServicePreview />
+            <BrandingSlider />
             <CaseStudies />
             <Footer />
         </main>

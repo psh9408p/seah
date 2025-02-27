@@ -6,20 +6,20 @@ export default function ServicePreview() {
         {
             title: "고무매트",
             description: "충격흡수와 내구성이 뛰어난 프리미엄 고무매트",
-            image: "/images/고무블럭/1show12301.jpg", // 올바른 경로
-            link: "/products/rubber-mat",
+            image: "/images/sigong.jpg", // 올바른 경로
+            link: "/products",
         },
         {
             title: "고무블럭",
             description: "안전하고 견고한 고품질 고무블럭",
-            image: "/next.svg",
-            link: "/products/rubber-block",
+            image: "/images/sigong.jpg",
+            link: "/products",
         },
         {
             title: "시공 서비스",
             description: "전문가의 완벽한 시공 서비스",
-            image: "/next.svg",
-            link: "/services/installation",
+            image: "/images/sigong.jpg",
+            link: "/products",
         },
     ];
 
