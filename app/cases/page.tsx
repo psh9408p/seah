@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { caseData } from "../data/caseData";
 import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export default function CasesPage() {
+function CasesContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
   const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -96,5 +96,13 @@ export default function CasesPage() {
       </div>
       <Footer />
     </main>
+  );
+}
+
+export default function CasesPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CasesContent />
+    </Suspense>
   );
 }
