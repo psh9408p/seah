@@ -50,7 +50,7 @@ const BrandGrid = () => {
               {brandData.map((brand) => (
                 <div
                   key={brand.id}
-                  className="group relative aspect-square bg-gray-50 rounded-lg overflow-hidden hover:-translate-y-1 transition-all duration-300"
+                  className="group relative aspect-[3/4] bg-gray-50 rounded-lg overflow-hidden hover:-translate-y-1 transition-all duration-300"
                 >
                   <a
                     href={brand.brandLink}
