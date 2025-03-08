@@ -1,35 +1,8 @@
 "use client";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import { useState } from "react";
 
 export default function InquiryPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    product: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // 여기에 폼 제출 로직을 구현할 수 있습니다
-    console.log(formData);
-    alert("문의가 접수되었습니다. 빠른 시일 내에 답변 드리겠습니다.");
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

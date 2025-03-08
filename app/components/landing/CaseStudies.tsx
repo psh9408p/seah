@@ -42,7 +42,6 @@ export default function CaseStudies() {
                   <h3 className="text-xl font-semibold mb-2 text-gray-800">
                     {item.title}
                   </h3>
-                  <p className="text-gray-500 mb-2 text-sm">{item.location}</p>
                   <p className="text-gray-600 line-clamp-2">
                     {item.description}
                   </p>
