@@ -12,8 +12,8 @@ export default function CaseStudies() {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-3 text-gray-800">시공 사례</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-3 text-black">시공 사례</h2>
+          <p className="text-black text-lg max-w-2xl mx-auto">
             전문적인 시공 노하우로 완성도 높은 결과물을 제공합니다
           </p>
         </div>

@@ -12,12 +12,12 @@ export default function IntroductionPage() {
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
             {/* 텍스트 영역 */}
             <div className="md:w-1/2 text-center md:text-left">
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+              <h1 className="text-3xl md:text-5xl font-bold text-black mb-4 md:mb-6">
                 안전한 환경을 만드는
                 <br />
                 세아산업의 발자취
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">
+              <p className="text-lg md:text-xl text-black mb-6 md:mb-8">
                 1999년부터 시작된 고무 제품 전문 기업
               </p>
             </div>
@@ -58,7 +58,7 @@ export default function IntroductionPage() {
             </div>
 
             {/* 제품 적용 분야 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-black">
               제품 적용 분야
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-16">

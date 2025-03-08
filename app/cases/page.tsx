@@ -38,13 +38,13 @@ function CasesContent() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="md:w-1/2 text-center md:text-left">
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+              <h1 className="text-3xl md:text-5xl font-bold text-black mb-4 md:mb-6">
                 고객의 신뢰로 만든
                 <br />
                 다양한 시공사례
               </h1>
-              <p className="text-lg md:text-xl text-gray-600">
-                세아산업의 전문적인 시공 노하우를 소개합니다
+              <p className="text-lg md:text-xl text-black">
+                세아산업의 다양한 시공 사례를 확인하세요
               </p>
             </div>
             <div className="md:w-1/2 relative h-[300px] md:h-[400px] w-full">
@@ -63,10 +63,10 @@ function CasesContent() {
       {/* 필터 섹션 */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-black">
             시공사례 목록
           </h2>
-          <p className="text-gray-600 text-center mb-8 md:mb-16">
+          <p className="text-black text-center mb-8 md:mb-16">
             카테고리별로 다양한 시공사례를 확인하실 수 있습니다
           </p>
 

@@ -428,18 +428,18 @@ export default function ProductsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="md:w-1/2 text-center md:text-left">
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+              <h1 className="text-3xl md:text-5xl font-bold text-black mb-4 md:mb-6">
                 고품질 고무제품으로
                 <br />
                 안전한 환경을 만듭니다
               </h1>
-              <p className="text-lg md:text-xl text-gray-600">
+              <p className="text-lg md:text-xl text-black">
                 세아산업의 다양한 제품을 소개합니다
               </p>
             </div>
             <div className="md:w-1/2 relative h-[300px] md:h-[400px] w-full">
               <Image
-                src="/images/playground.jpg"
+                src="/images/제품정보.jpg"
                 alt="세아산업 제품 전시"
                 fill
                 className="object-cover rounded-lg shadow-lg"
@@ -454,10 +454,10 @@ export default function ProductsPage() {
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-black">
               제품 라인업
             </h2>
-            <p className="text-gray-600 text-center mb-8 md:mb-16">
+            <p className="text-black text-center mb-8 md:mb-16">
               제품을 클릭하시면 상세 정보를 확인하실 수 있습니다
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

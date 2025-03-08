@@ -9,7 +9,7 @@ export default function Header() {
     { name: "회사소개", href: "/introduction" },
     { name: "제품정보", href: "/products" },
     { name: "시공사례", href: "/cases" },
-    { name: "구매문의", href: "/inquiry" },
+    { name: "보수/시공/구매/문의", href: "/inquiry" },
     // { name: "고객지원", href: "/support" },
     // { name: "문의하기", href: "/contact" },
   ];
