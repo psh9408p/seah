@@ -106,9 +106,6 @@ function CasesContent() {
                     <span className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
                       {item.category}
                     </span>
-                    <span className="text-sm text-gray-500">
-                      {item.completionDate}
-                    </span>
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-gray-600 mb-4">{item.description}</p>

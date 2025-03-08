@@ -7,11 +7,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* 회사 정보 */}
           <div>
-            <p className="text-gray-800 font-semibold text-lg mb-2">
-              대표: 세아산업
-            </p>
+            <p className="text-gray-800 font-semibold text-lg mb-2">세아산업</p>
             <p className="text-gray-600 mb-2">인천광역시 부평구 부평대로 153</p>
-            <p className="text-gray-600">사업자등록번호: 455-40-01317</p>
+            <p className="text-gray-600 mb-2">사업자등록번호: 455-40-01317</p>
+            <p className="text-gray-600">대표: 세아산업</p>
           </div>
 
           {/* 연락처 정보 */}
