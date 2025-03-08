@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
 
           {/* 빠른 링크 */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4">바로가기</h3>
             <ul className="space-y-2">
               <li>
@@ -58,7 +58,7 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
