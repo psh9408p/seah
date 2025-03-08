@@ -33,67 +33,113 @@ function CasesContent() {
   return (
     <main className="min-h-screen bg-gray-50">
       <Header />
-      {/* 헤더 섹션 */}
-
-      <section className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-16 max-w-7xl">
-          <h1 className="text-4xl font-bold mb-4">시공사례</h1>
-          <p className="text-gray-600 text-lg">
-            최고의 품질과 기술력으로 완성한 다양한 시공사례를 만나보세요
-          </p>
+      {/* 히어로 섹션 */}
+      <section className="relative bg-blue-50 py-12 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="md:w-1/2 text-center md:text-left">
+              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+                고객의 신뢰로 만든
+                <br />
+                다양한 시공사례
+              </h1>
+              <p className="text-lg md:text-xl text-gray-600">
+                세아산업의 전문적인 시공 노하우를 소개합니다
+              </p>
+            </div>
+            <div className="md:w-1/2 relative h-[300px] md:h-[400px] w-full">
+              <Image
+                src="/images/sigong.jpg"
+                alt="세아산업 시공사례"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* 필터 섹션 */}
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full transition-colors ${
-                selectedCategory === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            시공사례 목록
+          </h2>
+          <p className="text-gray-600 text-center mb-8 md:mb-16">
+            카테고리별로 다양한 시공사례를 확인하실 수 있습니다
+          </p>
 
-        {/* 시공 사례 목록 */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCases.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-lg overflow-hidden shadow-lg"
-            >
-              <div className="relative h-64">
-                <Image
-                  src={item.imageUrl}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-500 mb-2">{item.location}</p>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">
-                    {item.completionDate}
-                  </span>
-                  <span className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
-                    {item.category}
-                  </span>
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-2 rounded-full transition-colors ${
+                  selectedCategory === category
+                    ? "bg-blue-600 text-white"
+                    : "bg-white hover:bg-gray-100 text-gray-700 shadow-sm"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* 시공 사례 목록 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredCases.map((item) => (
+              <div
+                key={item.id}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+              >
+                <div className="relative h-64">
+                  <Image
+                    src={item.imageUrl}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+                      {item.category}
+                    </span>
+                    <span className="text-sm text-gray-500">
+                      {item.completionDate}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-600 mb-4">{item.description}</p>
+                  <div className="flex items-center text-gray-500">
+                    <svg
+                      className="w-4 h-4 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    <span className="text-sm">{item.location}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </main>
   );

@@ -34,6 +34,7 @@ interface Product {
 
 export default function ProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const products: Product[] = [
     {
@@ -251,7 +252,7 @@ export default function ProductsPage() {
     },
     {
       id: "color-rubber-pole",
-      title: "칼라고무기둥",
+      title: "칼라경계기둥",
       description: "안전하고 화려한 디자인의 고무기둥",
       features: [
         "친환경 인조고무 소재",
@@ -363,6 +364,56 @@ export default function ProductsPage() {
             "/images/조합놀이대/M5.jpg",
             "/images/조합놀이대/M6.jpg",
             "/images/조합놀이대/M7.jpg",
+          ],
+        },
+      },
+    },
+    {
+      id: "artificial-grass",
+      title: "인조잔디",
+      description: "내구성과 실용성을 갖춘 고품질 인조잔디",
+      features: [
+        "우수한 내구성",
+        "자연스러운 질감",
+        "편리한 유지관리",
+        "다양한 용도",
+      ],
+      icon: "🌱",
+      bgColor: "bg-emerald-50",
+      details: {
+        description:
+          "고품질 원자재를 사용하여 제작된 인조잔디로, 운동장, 조경, 실내외 스포츠 시설 등 다양한 용도로 활용 가능합니다. 자연잔디와 유사한 질감과 내구성을 제공합니다.",
+        specs: [
+          {
+            name: "일반형",
+            sizes: [
+              "파일높이: 25mm ~ 60mm",
+              "폭: 2m, 4m (주문제작 가능)",
+              "길이: 고객 요청에 따라 맞춤 제작",
+            ],
+          },
+          {
+            name: "용도별 규격",
+            sizes: [
+              "조경용: 25mm ~ 35mm",
+              "스포츠용: 40mm ~ 60mm",
+              "실내용: 15mm ~ 25mm",
+            ],
+          },
+        ],
+        components: [
+          "인조잔디 매트",
+          "충진재(선택사항)",
+          "접착테이프(선택사항)",
+        ],
+        colors: ["녹색 기본", "기타 색상 주문 가능"],
+        note: "용도와 환경에 따라 적합한 규격을 선택하실 수 있으며, 맞춤 시공도 가능합니다.",
+        images: {
+          main: "/images/인조잔디/main.jpg",
+          gallery: [
+            "/images/인조잔디/1.jpg",
+            "/images/인조잔디/2.jpg",
+            "/images/인조잔디/3.jpg",
           ],
         },
       },
@@ -502,7 +553,13 @@ export default function ProductsPage() {
 
               {selectedProduct.details && (
                 <div className="space-y-8">
-                  <div className="relative h-[350px] md:h-[450px] w-full mb-4">
+                  <div
+                    className="relative h-[350px] md:h-[450px] w-full mb-4 cursor-pointer"
+                    onClick={() =>
+                      selectedProduct.details?.images?.main &&
+                      setSelectedImage(selectedProduct.details.images.main)
+                    }
+                  >
                     <Image
                       src={selectedProduct.details.images!.main}
                       alt={`${selectedProduct.title} 메인 이미지`}
@@ -514,11 +571,12 @@ export default function ProductsPage() {
 
                   {/* 갤러리 이미지 */}
                   <div className="grid gap-6 grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto">
-                    {selectedProduct.details.images!.gallery?.map(
+                    {selectedProduct.details.images?.gallery?.map(
                       (img, index) => (
                         <div
                           key={index}
-                          className="relative h-[200px] md:h-[250px] w-full bg-gray-50"
+                          className="relative h-[200px] md:h-[250px] w-full bg-gray-50 cursor-pointer"
+                          onClick={() => img && setSelectedImage(img)}
                         >
                           <Image
                             src={img}
@@ -577,6 +635,43 @@ export default function ProductsPage() {
         </div>
       )}
       <Footer />
+
+      {/* 이미지 전체화면 모달 */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 z-[60] flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 text-white hover:text-gray-300"
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <div className="relative w-full h-full flex items-center justify-center">
+            <Image
+              src={selectedImage}
+              alt="전체화면 이미지"
+              fill
+              className="object-contain p-4"
+              sizes="100vw"
+              priority
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }

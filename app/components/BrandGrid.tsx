@@ -12,16 +12,12 @@ const BrandGrid = () => {
           {/* 왼쪽 설명 영역 */}
           <div className="lg:w-1/4 space-y-6">
             <h2 className="text-4xl font-bold leading-tight">
-              Our
+              세아산업의
               <br />
-              Brands
+              주요제품
             </h2>
             <div className="space-y-4">
-              <p className="text-lg text-gray-700">
-                아모레퍼시픽이 선보이는
-                <br />
-                글로벌 뷰티 브랜드
-              </p>
+              <p className="text-lg text-gray-700">Products</p>
               <a
                 href="#"
                 className="inline-flex items-center text-gray-900 hover:text-gray-600 transition-colors"

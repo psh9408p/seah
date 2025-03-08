@@ -1,65 +1,63 @@
-export const brandData = [
+export interface Brand {
+  id: number;
+  brandImg: string;
+  brandAlt: string;
+  brandLink: string;
+}
+
+export const brandData: Brand[] = [
   {
     id: 1,
-    brandImg: "/images/고무매트/고무매트.jpg",
-    brandAlt: "설화수",
-    brandDesc: "예술과 헤리티지로 빚어내는 아름다움의 세계",
-    brandLink: "/int/ko/brands/sulwhasoo.html",
+    brandImg: "/images/우레탄포장/복합탄성 메인.jpg",
+    brandAlt: "우레탄 바닥재",
+    brandLink: "/products#urethane",
   },
   {
     id: 2,
-    brandImg: "/images/main_image121.jpg",
-    brandAlt: "라네즈",
-    brandDesc: "OPEN TO WONDER.",
-    brandLink: "/int/ko/brands/laneige.html",
+    brandImg: "/images/고무매트/고무매트.jpg",
+    brandAlt: "고무매트",
+    brandLink: "/products#rubber-mat",
   },
   {
     id: 3,
-    brandImg: "/images/main_image1111.jpg",
-    brandAlt: "이니스프리",
-    brandDesc: "Effective, Nature-Powered Skincare Discovered from the Island",
-    brandLink: "/int/ko/brands/innisfree.html",
+    brandImg: "/images/인조잔디/인조잔디 메인.jpg",
+    brandAlt: "인조잔디",
+    brandLink: "/products#artificial-grass",
   },
   {
     id: 4,
-    brandImg: "/images/main_image12111.jpg",
-    brandAlt: "이니스프리",
-    brandDesc: "Effective, Nature-Powered Skincare Discovered from the Island",
-    brandLink: "/int/ko/brands/innisfree.html",
+    brandImg: "/images/탄성고무칩/탄성고무칩 메인.jpg",
+    brandAlt: "탄성고무칩",
+    brandLink: "/products#rubber-chip",
   },
   {
     id: 5,
-    brandImg: "/images/colorgomu.png",
-    brandAlt: "설화수",
-    brandDesc: "예술과 헤리티지로 빚어내는 아름다움의 세계",
-    brandLink: "/int/ko/brands/sulwhasoo.html",
+    brandImg: "/images/고무블럭/고무블럭 메인.jpg",
+    brandAlt: "고무블럭",
+    brandLink: "/products#rubber-block",
   },
   {
     id: 6,
-    brandImg: "/images/우레탄시공.jpg",
-    brandAlt: "라네즈",
-    brandDesc: "OPEN TO WONDER.",
-    brandLink: "/int/ko/brands/laneige.html",
+    brandImg: "/images/고무경계석/고무경계석 메인.jpg",
+    brandAlt: "고무경계석",
+    brandLink: "/products#rubber-border",
   },
   {
     id: 7,
-    brandImg: "/images/헬스장매트.jpg",
-    brandAlt: "이니스프리",
-    brandDesc: "Effective, Nature-Powered Skincare Discovered from the Island",
-    brandLink: "/int/ko/brands/innisfree.html",
+    brandImg: "/images/원형칼라경계기둥/칼라경계기둥 메인.jpg",
+    brandAlt: "칼라경계기둥",
+    brandLink: "/products#color-pole",
   },
   {
     id: 8,
-    brandImg: "/images/흔들놀이.jpg",
-    brandAlt: "이니스프리",
-    brandDesc: "Effective, Nature-Powered Skincare Discovered from the Island",
-    brandLink: "/int/ko/brands/innisfree.html",
+    brandImg: "/images/흔들놀이/흔들놀이 메인.jpg",
+    brandAlt: "흔들놀이",
+    brandLink: "/products#swing",
   },
   {
     id: 9,
-    brandImg: "/images/gnbp1111.jpg",
-    brandAlt: "설화수",
-    brandDesc: "예술과 헤리티지로 빚어내는 아름다움의 세계",
-    brandLink: "/int/ko/brands/sulwhasoo.html",
+    brandImg: "/images/조합놀이대/조합놀이대 메인.jpg",
+    brandAlt: "조합놀이대",
+    brandLink: "/products#playground",
   },
 ];
