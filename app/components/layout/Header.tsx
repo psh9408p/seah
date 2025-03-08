@@ -151,7 +151,7 @@ export default function Header() {
                 <li key={category.name}>
                   <Link
                     href={category.href}
-                    className="block font-medium relative group p-2"
+                    className="block font-medium relative group p-2 text-black"
                   >
                     {category.name}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>

@@ -27,7 +27,12 @@ function CasesContent() {
 
   const filteredCases =
     selectedCategory === "전체"
-      ? caseData
+      ? [...caseData].sort((a, b) => {
+          // 인조잔디 카테고리를 맨 앞으로 정렬
+          if (a.category === "인조잔디" && b.category !== "인조잔디") return -1;
+          if (a.category !== "인조잔디" && b.category === "인조잔디") return 1;
+          return 0;
+        })
       : caseData.filter((item) => item.category === selectedCategory);
 
   return (
@@ -49,7 +54,7 @@ function CasesContent() {
             </div>
             <div className="md:w-1/2 relative h-[300px] md:h-[400px] w-full">
               <Image
-                src="/images/sigong.jpg"
+                src="/images/시공사례.jpg"
                 alt="세아산업 시공사례"
                 fill
                 className="object-cover rounded-lg shadow-lg"
